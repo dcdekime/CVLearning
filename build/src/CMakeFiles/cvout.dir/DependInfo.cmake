@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/parallels/Documents/Vision_Stuff/src/visionMain.cpp" "/home/parallels/Documents/Vision_Stuff/build/src/CMakeFiles/cvout.dir/visionMain.cpp.o"
+  "/home/ddekime/CVLearning/src/visionMain.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/cvout.dir/visionMain.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,12 +12,12 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/../include"
   "../src/../resources"
-  "/usr/local/include/opencv4"
+  "/usr/local/include/opencv"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/parallels/Documents/Vision_Stuff/build/src/CMakeFiles/CVFunctions.dir/DependInfo.cmake"
+  "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

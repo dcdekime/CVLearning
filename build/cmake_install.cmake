@@ -1,4 +1,4 @@
-# Install script for directory: /home/parallels/Documents/Vision_Stuff
+# Install script for directory: /home/ddekime/CVLearning
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/parallels/Documents/Vision_Stuff/build/src/cmake_install.cmake")
+  include("/home/ddekime/CVLearning/build/src/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/parallels/Documents/Vision_Stuff/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ddekime/CVLearning/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

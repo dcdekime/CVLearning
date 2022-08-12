@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/parallels/Documents/Vision_Stuff
+CMAKE_SOURCE_DIR = /home/ddekime/CVLearning
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/parallels/Documents/Vision_Stuff/build
+CMAKE_BINARY_DIR = /home/ddekime/CVLearning/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/parallels/Documents/Vision_Stuff/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/Documents/Vision_Stuff/build/CMakeFiles /home/parallels/Documents/Vision_Stuff/build/src/CMakeFiles/progress.marks
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/Documents/Vision_Stuff/build/CMakeFiles 0
+	cd /home/ddekime/CVLearning/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ddekime/CVLearning/build/CMakeFiles /home/ddekime/CVLearning/build/src/CMakeFiles/progress.marks
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ddekime/CVLearning/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ddekime/CVLearning/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/cvout.dir/rule:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cvout.dir/rule
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cvout.dir/rule
 .PHONY : src/CMakeFiles/cvout.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ cvout: src/CMakeFiles/cvout.dir/rule
 
 # fast build rule for target.
 cvout/fast:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/build
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/build
 .PHONY : cvout/fast
 
 # Convenience name for target.
 src/CMakeFiles/CVFunctions.dir/rule:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CVFunctions.dir/rule
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CVFunctions.dir/rule
 .PHONY : src/CMakeFiles/CVFunctions.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ CVFunctions: src/CMakeFiles/CVFunctions.dir/rule
 
 # fast build rule for target.
 CVFunctions/fast:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/build
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/build
 .PHONY : CVFunctions/fast
 
 cvFunctions.o: cvFunctions.cpp.o
@@ -146,7 +146,7 @@ cvFunctions.o: cvFunctions.cpp.o
 
 # target to build an object file
 cvFunctions.cpp.o:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o
 .PHONY : cvFunctions.cpp.o
 
 cvFunctions.i: cvFunctions.cpp.i
@@ -155,7 +155,7 @@ cvFunctions.i: cvFunctions.cpp.i
 
 # target to preprocess a source file
 cvFunctions.cpp.i:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.i
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.i
 .PHONY : cvFunctions.cpp.i
 
 cvFunctions.s: cvFunctions.cpp.s
@@ -164,7 +164,7 @@ cvFunctions.s: cvFunctions.cpp.s
 
 # target to generate assembly for a file
 cvFunctions.cpp.s:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.s
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.s
 .PHONY : cvFunctions.cpp.s
 
 cvImageProcessing.o: cvImageProcessing.cpp.o
@@ -173,7 +173,7 @@ cvImageProcessing.o: cvImageProcessing.cpp.o
 
 # target to build an object file
 cvImageProcessing.cpp.o:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o
 .PHONY : cvImageProcessing.cpp.o
 
 cvImageProcessing.i: cvImageProcessing.cpp.i
@@ -182,7 +182,7 @@ cvImageProcessing.i: cvImageProcessing.cpp.i
 
 # target to preprocess a source file
 cvImageProcessing.cpp.i:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.i
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.i
 .PHONY : cvImageProcessing.cpp.i
 
 cvImageProcessing.s: cvImageProcessing.cpp.s
@@ -191,8 +191,35 @@ cvImageProcessing.s: cvImageProcessing.cpp.s
 
 # target to generate assembly for a file
 cvImageProcessing.cpp.s:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.s
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.s
 .PHONY : cvImageProcessing.cpp.s
+
+cvObjectDetection.o: cvObjectDetection.cpp.o
+
+.PHONY : cvObjectDetection.o
+
+# target to build an object file
+cvObjectDetection.cpp.o:
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o
+.PHONY : cvObjectDetection.cpp.o
+
+cvObjectDetection.i: cvObjectDetection.cpp.i
+
+.PHONY : cvObjectDetection.i
+
+# target to preprocess a source file
+cvObjectDetection.cpp.i:
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.i
+.PHONY : cvObjectDetection.cpp.i
+
+cvObjectDetection.s: cvObjectDetection.cpp.s
+
+.PHONY : cvObjectDetection.s
+
+# target to generate assembly for a file
+cvObjectDetection.cpp.s:
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.s
+.PHONY : cvObjectDetection.cpp.s
 
 visionMain.o: visionMain.cpp.o
 
@@ -200,7 +227,7 @@ visionMain.o: visionMain.cpp.o
 
 # target to build an object file
 visionMain.cpp.o:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/visionMain.cpp.o
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/visionMain.cpp.o
 .PHONY : visionMain.cpp.o
 
 visionMain.i: visionMain.cpp.i
@@ -209,7 +236,7 @@ visionMain.i: visionMain.cpp.i
 
 # target to preprocess a source file
 visionMain.cpp.i:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/visionMain.cpp.i
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/visionMain.cpp.i
 .PHONY : visionMain.cpp.i
 
 visionMain.s: visionMain.cpp.s
@@ -218,7 +245,7 @@ visionMain.s: visionMain.cpp.s
 
 # target to generate assembly for a file
 visionMain.cpp.s:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/visionMain.cpp.s
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/cvout.dir/build.make src/CMakeFiles/cvout.dir/visionMain.cpp.s
 .PHONY : visionMain.cpp.s
 
 # Help Target
@@ -237,6 +264,9 @@ help:
 	@echo "... cvImageProcessing.o"
 	@echo "... cvImageProcessing.i"
 	@echo "... cvImageProcessing.s"
+	@echo "... cvObjectDetection.o"
+	@echo "... cvObjectDetection.i"
+	@echo "... cvObjectDetection.s"
 	@echo "... visionMain.o"
 	@echo "... visionMain.i"
 	@echo "... visionMain.s"
@@ -251,6 +281,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/parallels/Documents/Vision_Stuff/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ddekime/CVLearning/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

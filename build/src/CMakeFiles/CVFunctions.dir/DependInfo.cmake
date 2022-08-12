@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/parallels/Documents/Vision_Stuff/src/cvFunctions.cpp" "/home/parallels/Documents/Vision_Stuff/build/src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o"
-  "/home/parallels/Documents/Vision_Stuff/src/cvImageProcessing.cpp" "/home/parallels/Documents/Vision_Stuff/build/src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o"
+  "/home/ddekime/CVLearning/src/cvFunctions.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o"
+  "/home/ddekime/CVLearning/src/cvImageProcessing.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o"
+  "/home/ddekime/CVLearning/src/cvObjectDetection.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -13,7 +14,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/../include"
   "../src/../resources"
-  "/usr/local/include/opencv4"
+  "/usr/local/include/opencv"
   )
 
 # Targets to which this target links.

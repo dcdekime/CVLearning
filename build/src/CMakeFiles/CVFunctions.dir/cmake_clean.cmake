@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o"
   "CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o"
+  "CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o"
   "libCVFunctions.a"
   "libCVFunctions.pdb"
 )

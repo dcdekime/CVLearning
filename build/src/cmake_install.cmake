@@ -1,4 +1,4 @@
-# Install script for directory: /home/parallels/Documents/Vision_Stuff/src
+# Install script for directory: /home/ddekime/CVLearning/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/parallels/Documents/Vision_Stuff/src/../include -I/home/parallels/Documents/Vision_Stuff/src/../resources -I/usr/local/include/opencv4 
+CXX_INCLUDES = -I/home/ddekime/CVLearning/src/../include -I/home/ddekime/CVLearning/src/../resources -I/usr/local/include/opencv 
 
