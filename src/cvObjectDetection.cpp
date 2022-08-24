@@ -1,5 +1,7 @@
 #include "cvObjectDetection.hpp"
 
+#define RESOURCE_PATH "/home/ddekime/CVLearning/resources/"
+
 void cvObjectDetection::templateMatching()
 {
     cv::Mat sammyFull = cv::imread("/home/ddekime/CVLearning/resources/sammy.jpg");
@@ -266,4 +268,131 @@ void cvObjectDetection::featureDetection(const std::string& fmType)
     cv::waitKey(0);
     cv::destroyAllWindows();
 }
+
+void cvObjectDetection::segmentationNoWatershed()
+{
+    std::string pennyImgName = "pennies.jpg";
+    cv::Mat pennyImg = cv::imread(RESOURCE_PATH + pennyImgName, cv::IMREAD_COLOR);
+
+    // Median Blur
+    cv::Mat sepBlur, sepBlurGray, sepThresh;
+    cv::medianBlur(pennyImg, sepBlur, 25);
+
+    // GrayScale
+    cv::cvtColor(sepBlur, sepBlurGray, cv::COLOR_BGR2GRAY);
+
+    // Binary Threshold
+    cv::threshold(sepBlurGray, sepThresh, 160, 255, cv::THRESH_BINARY_INV);
+
+    // Find Contours
+
+    std::vector<std::vector<cv::Point>> contours;
+    std::vector<cv::Vec4i> hierarchy;
+
+    // define what kind of features to extract -> e.g. external, internal, all
+    cv::findContours(sepThresh, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+
+    for (int i=0; i < contours.size(); i++)
+    {
+        cv::Scalar color = cv::Scalar(0,0,255); // red contour (BGR)
+        cv::drawContours(pennyImg, contours, (int)i, color, 10, cv::LINE_8, hierarchy);
+    }
+
+    // Display Contours Image
+    std::string pennyWindow = "pennies";
+    std::string contourWindow = "contours";
+    cv::namedWindow(pennyWindow, cv::WindowFlags::WINDOW_NORMAL);
+    cv::imshow(pennyWindow, pennyImg);
+    cv::waitKey(0);
+    cv::destroyAllWindows();
+}
+
+void cvObjectDetection::watershedSegmentation()
+{
+    std::string pennyImgName = "pennies.jpg";
+    cv::Mat pennyImg = cv::imread(RESOURCE_PATH + pennyImgName, cv::IMREAD_COLOR);
+
+    // Median Blur
+    cv::Mat sepBlur, sepBlurGray, sepThresh;
+    cv::medianBlur(pennyImg, sepBlur, 35);
+
+    // GrayScale
+    cv::cvtColor(sepBlur, sepBlurGray, cv::COLOR_BGR2GRAY);
+
+    // Binary Threshold
+    // Otsu's method -> cluster-based image thresholding algorithm
+    cv::threshold(sepBlurGray, sepThresh, 0, 255, cv::THRESH_BINARY_INV + cv::THRESH_OTSU);
+
+    // Noise Removal
+    cv::Mat kernel = cv::Mat::ones(cv::Size(3,3), CV_8UC1);
+    cv::Mat regionBG;
+    regionBG.convertTo(regionBG, CV_8U);
+    cv::morphologyEx(sepThresh, regionBG, cv::MORPH_OPEN, kernel, cv::Point(-1,-1), 2);
+
+    // Distance Transform
+    cv::Mat distTransform;
+    distTransform.convertTo(distTransform, CV_8U);
+    cv::distanceTransform(regionBG, distTransform, cv::DIST_L2, 5);
+    cv::normalize(distTransform, distTransform, 0, 1.0, cv::NORM_MINMAX);
+
+    // Threshold (dilate) again to get sure points
+    cv::Mat confRegionFG;
+    double minVal, maxVal;
+    cv::minMaxIdx(distTransform, &minVal, &maxVal);
+    cv::threshold(distTransform, confRegionFG, 0.7*maxVal, 255, 0);
+
+    // Find unknown region
+    cv::Mat unknownRegion;
+    confRegionFG.convertTo(confRegionFG, CV_8U);
+    cv::subtract(regionBG, confRegionFG, unknownRegion);
+
+    // Create label markers for watershed algorithm
+
+    // 1. get markers
+    cv::Mat markers = cv::Mat(confRegionFG.size(), CV_32S);
+    cv::connectedComponents(confRegionFG, markers);
+    markers += 1;
+    cv::Mat backgroundMask = unknownRegion == 255;
+    markers.setTo(0, backgroundMask);
+
+    // perform watershed algorithm
+    cv::watershed(pennyImg, markers);
+    markers.convertTo(markers, CV_8U, 10);
+
+    // Find Contours
+    std::vector<std::vector<cv::Point>> contours;
+    std::vector<cv::Vec4i> hierarchy;
+
+    // define what kind of features to extract -> e.g. external, internal, all
+    cv::findContours(markers, contours, hierarchy, cv::RETR_CCOMP, cv::CHAIN_APPROX_SIMPLE);
+
+    for (int i=0; i < contours.size(); i++)
+    {
+        cv::Scalar color = cv::Scalar(255,0,0); // red contour (BGR)
+        cv::drawContours(pennyImg, contours, (int)i, color, 10, cv::LINE_8, hierarchy);
+    }
+
+
+    // Display Contours Image
+    std::string pennyWindow = "pennies";
+    std::string contourWindow = "contours";
+    cv::namedWindow(pennyWindow, cv::WindowFlags::WINDOW_NORMAL);
+    cv::imshow(pennyWindow, pennyImg);
+    cv::waitKey(0);
+    cv::destroyAllWindows();
+}
+
+void cvObjectDetection::watershedCustomSeed()
+{
+    std::string roadImgName = "road_image.jpg";
+    cv::Mat road, roadCopy, markerImg, segments;
+
+    road = cv::imread(RESOURCE_PATH + roadImgName, cv::IMREAD_COLOR);
+    road.copyTo(roadCopy);
+
+    markerImg = cv::Mat::zeros(road.size(), CV_32S);
+    segments = cv::Mat::zeros(road.size(), CV_8U);
+
+}
+
 

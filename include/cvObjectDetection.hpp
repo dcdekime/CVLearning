@@ -12,4 +12,7 @@ public:
     void edgeDetection();
     void contourDetection();
     void featureDetection(const std::string& fmType);
+    void segmentationNoWatershed();
+    void watershedSegmentation();
+    void watershedCustomSeed();
 };

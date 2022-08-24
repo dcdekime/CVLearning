@@ -36,7 +36,8 @@ int main( int argc, char** argv )
         //objDet.cornerDetection();
         //objDet.edgeDetection();
         //objDet.contourDetection();
-        objDet.featureDetection(featureDetectionType);
+        //objDet.featureDetection(featureDetectionType);
+        objDet.watershedSegmentation();
     
         return 0;
 }
