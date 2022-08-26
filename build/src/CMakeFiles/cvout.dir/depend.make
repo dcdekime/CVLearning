@@ -4,5 +4,6 @@
 src/CMakeFiles/cvout.dir/visionMain.cpp.o: ../include/cvFunctions.hpp
 src/CMakeFiles/cvout.dir/visionMain.cpp.o: ../include/cvImageProcessing.hpp
 src/CMakeFiles/cvout.dir/visionMain.cpp.o: ../include/cvObjectDetection.hpp
+src/CMakeFiles/cvout.dir/visionMain.cpp.o: ../include/cvObjectTracking.hpp
 src/CMakeFiles/cvout.dir/visionMain.cpp.o: ../src/visionMain.cpp
 

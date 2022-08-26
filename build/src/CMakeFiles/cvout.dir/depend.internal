@@ -5,4 +5,5 @@ src/CMakeFiles/cvout.dir/visionMain.cpp.o
  ../include/cvFunctions.hpp
  ../include/cvImageProcessing.hpp
  ../include/cvObjectDetection.hpp
+ ../include/cvObjectTracking.hpp
  /home/ddekime/CVLearning/src/visionMain.cpp

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libCVFunctions.a  CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o
+/usr/bin/ar qc libCVFunctions.a  CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o
 /usr/bin/ranlib libCVFunctions.a

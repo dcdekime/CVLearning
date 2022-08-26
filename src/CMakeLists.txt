@@ -1,4 +1,4 @@
-add_library(CVFunctions cvFunctions.cpp cvImageProcessing.cpp cvObjectDetection.cpp)
+add_library(CVFunctions cvFunctions.cpp cvImageProcessing.cpp cvObjectDetection.cpp cvObjectTracking.cpp)
 
 find_package(OpenCV REQUIRED)
 

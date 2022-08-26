@@ -8,8 +8,8 @@ cvFunctions::cvFunctions(cv::Mat& img) : mImg(img) {};
 void cvFunctions::importImage()
 {
     cv::Mat image;
-    image = cv::imread("/home/parallels/Documents/Vision_Stuff/resources/phteven.jpg",
-            cv::IMREAD_COLOR);
+    std::string phtevenImg = "phteven.jpg";
+    image = cv::imread(RESOURCE_PATH + phtevenImg, cv::IMREAD_COLOR);
 
     if(! image.data)
     {
@@ -40,7 +40,8 @@ void cvFunctions::captureWebcamVideo()
     std::cout << "FPS: " << fps << std::endl;
 
     bool writeVideo = false;
-    cv::VideoWriter videoWriter("/home/parallels/Documents/Vision_Stuff/resources/myVideo.mp4", cv::VideoWriter::fourcc('X','V','I','D'), 25, cv::Size(dWidth, dHeight));
+    std::string myVideo = "myVideo.mp4";
+    cv::VideoWriter videoWriter(RESOURCE_PATH + myVideo, cv::VideoWriter::fourcc('X','V','I','D'), 25, cv::Size(dWidth, dHeight));
 
     while (true)
     {

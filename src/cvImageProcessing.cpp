@@ -43,7 +43,8 @@ void cvImageProcessing::blendImages(cv::Mat& img1, cv::Mat& img2)
 
 void cvImageProcessing::imageThresholding()
 {
-    cv::Mat rainbowImg = cv::imread("/home/ddekime/CVLearning/resources/rainbow.jpg", 0);
+    std::string rainbow = "rainbow.jpg";
+    cv::Mat rainbowImg = cv::imread(RESOURCE_PATH + rainbow, 0);
 
     if (rainbowImg.empty())
     {
@@ -60,7 +61,8 @@ void cvImageProcessing::blurrSmooth()
 {
     cv::Mat bricksGamma;
     cv::Mat blurredImg;
-    cv::Mat brickImg = cv::imread("/home/ddekime/CVLearning/resources/bricks.jpg", cv::IMREAD_COLOR);
+    std::string bricks = "bricks.jpg";
+    cv::Mat brickImg = cv::imread(RESOURCE_PATH + bricks, cv::IMREAD_COLOR);
     brickImg.convertTo(brickImg, CV_32F, 1.0 / 255, 0);
 
     // *** alter gamma value to change brightness of an image ***
@@ -124,7 +126,8 @@ void cvImageProcessing::morphological()
 
 void cvImageProcessing::gradients()
 {
-    cv::Mat sudokuImg = cv::imread("/home/ddekime/CVLearning/resources/sudoku.jpg", cv::IMREAD_GRAYSCALE);
+    std::string sudoku = "sudoku.jpg";
+    cv::Mat sudokuImg = cv::imread(RESOURCE_PATH + sudoku, cv::IMREAD_GRAYSCALE);
     cv::Mat sobelX;
     cv::Mat sobelY;
     cv::Mat laplace;
@@ -199,9 +202,12 @@ void drawHistogram(cv::Mat& hist_blue, cv::Mat& hist_green, cv::Mat& hist_red)
 
 void cvImageProcessing::histogram()
 {
-    cv::Mat dark_horse = cv::imread("/home/ddekime/CVLearning/resources/horse.jpg", cv::IMREAD_COLOR);
-    cv::Mat rainbow = cv::imread("/home/ddekime/CVLearning/resources/rainbow.jpg", cv::IMREAD_COLOR);
-    cv::Mat blueBricks = cv::imread("/home/ddekime/CVLearning/resources/bricks.jpg", cv::IMREAD_COLOR);
+    std::string horseImg = "horse.jpg";
+    std::string rainbowImg = "rainbow.jpg";
+    std::string bricksImg = "bricks.jpg";
+    cv::Mat dark_horse = cv::imread(RESOURCE_PATH + horseImg, cv::IMREAD_COLOR);
+    cv::Mat rainbow = cv::imread(RESOURCE_PATH + rainbowImg, cv::IMREAD_COLOR);
+    cv::Mat blueBricks = cv::imread(RESOURCE_PATH + bricksImg, cv::IMREAD_COLOR);
     cv::Mat histogramMat_blue, histogramMat_green, histogramMat_red;
     std::vector<cv::Mat> srcImages = {dark_horse, rainbow, blueBricks};
 

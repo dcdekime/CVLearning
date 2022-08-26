@@ -1,7 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include "opencv2/opencv.hpp"
+#include "visionCommon.hpp"
 
 class cvObjectDetection
 {
@@ -15,4 +12,6 @@ public:
     void segmentationNoWatershed();
     void watershedSegmentation();
     void watershedCustomSeed();
+    void faceDetection();
+    void blurPlates();
 };

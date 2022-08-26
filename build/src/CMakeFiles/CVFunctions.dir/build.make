@@ -96,11 +96,25 @@ src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.s"
 	cd /home/ddekime/CVLearning/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ddekime/CVLearning/src/cvObjectDetection.cpp -o CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.s
 
+src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o: src/CMakeFiles/CVFunctions.dir/flags.make
+src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o: ../src/cvObjectTracking.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ddekime/CVLearning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o"
+	cd /home/ddekime/CVLearning/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o -c /home/ddekime/CVLearning/src/cvObjectTracking.cpp
+
+src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.i"
+	cd /home/ddekime/CVLearning/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ddekime/CVLearning/src/cvObjectTracking.cpp > CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.i
+
+src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.s"
+	cd /home/ddekime/CVLearning/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ddekime/CVLearning/src/cvObjectTracking.cpp -o CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.s
+
 # Object files for target CVFunctions
 CVFunctions_OBJECTS = \
 "CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o" \
 "CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o" \
-"CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o"
+"CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o" \
+"CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o"
 
 # External object files for target CVFunctions
 CVFunctions_EXTERNAL_OBJECTS =
@@ -108,9 +122,10 @@ CVFunctions_EXTERNAL_OBJECTS =
 src/libCVFunctions.a: src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o
 src/libCVFunctions.a: src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o
 src/libCVFunctions.a: src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o
+src/libCVFunctions.a: src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o
 src/libCVFunctions.a: src/CMakeFiles/CVFunctions.dir/build.make
 src/libCVFunctions.a: src/CMakeFiles/CVFunctions.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ddekime/CVLearning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libCVFunctions.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ddekime/CVLearning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libCVFunctions.a"
 	cd /home/ddekime/CVLearning/build/src && $(CMAKE_COMMAND) -P CMakeFiles/CVFunctions.dir/cmake_clean_target.cmake
 	cd /home/ddekime/CVLearning/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CVFunctions.dir/link.txt --verbose=$(VERBOSE)
 

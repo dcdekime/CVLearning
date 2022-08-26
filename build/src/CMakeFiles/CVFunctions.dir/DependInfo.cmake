@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ddekime/CVLearning/src/cvFunctions.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/cvFunctions.cpp.o"
   "/home/ddekime/CVLearning/src/cvImageProcessing.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o"
   "/home/ddekime/CVLearning/src/cvObjectDetection.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o"
+  "/home/ddekime/CVLearning/src/cvObjectTracking.cpp" "/home/ddekime/CVLearning/build/src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

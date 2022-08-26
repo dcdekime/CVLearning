@@ -10,3 +10,6 @@ src/CMakeFiles/CVFunctions.dir/cvImageProcessing.cpp.o
 src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.o
  ../include/cvObjectDetection.hpp
  /home/ddekime/CVLearning/src/cvObjectDetection.cpp
+src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o
+ ../include/cvObjectTracking.hpp
+ /home/ddekime/CVLearning/src/cvObjectTracking.cpp

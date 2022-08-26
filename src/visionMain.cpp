@@ -1,21 +1,24 @@
 #include "cvFunctions.hpp"
 #include "cvImageProcessing.hpp"
 #include "cvObjectDetection.hpp"
+#include "cvObjectTracking.hpp"
 
-int main( int argc, char** argv )
+
+int main(int argc, char** argv)
 {
-        cv::Mat img1 = cv::imread("/home/ddekime/CVLearning/resources/pup1.jpg",
-            cv::IMREAD_COLOR);
+        std::string pup1 = "pup1.jpg";
+        cv::Mat img1 = cv::imread(RESOURCE_PATH + pup1, cv::IMREAD_COLOR);
 
-        cv::Mat img2 = cv::imread("/home/ddekime/CVLearning/resources/pup2.jpg",
-            cv::IMREAD_COLOR);
+        std::string pup2 = "pup2.jpg";
+        cv::Mat img2 = cv::imread(RESOURCE_PATH + pup2, cv::IMREAD_COLOR);
 
-        cv::Mat phtevenImg = cv::imread("/home/ddekime/CVLearning/resources/phteven.jpg",
-                cv::IMREAD_COLOR);
+        std::string phteven = "phteven.jpg";
+        cv::Mat phtevenImg = cv::imread(RESOURCE_PATH + phteven, cv::IMREAD_COLOR);
 
         cvFunctions cvObj;
         cvImageProcessing ipObj;
         cvObjectDetection objDet;
+        cvObjectTracking objTrack;
 
         // *** call cvFunctions methods ***
         //cvObj.importImage();
@@ -37,7 +40,12 @@ int main( int argc, char** argv )
         //objDet.edgeDetection();
         //objDet.contourDetection();
         //objDet.featureDetection(featureDetectionType);
-        objDet.watershedSegmentation();
+        //objDet.watershedSegmentation();
+        //objDet.faceDetection();
+        //objDet.blurPlates();
+
+        // *** call objectTracking methods ***
+        //objTrack.sparseOpticalFlow();
     
         return 0;
 }

@@ -34,6 +34,16 @@ vector
 opencv2/opencv.hpp
 ../include/opencv2/opencv.hpp
 
+../include/cvObjectTracking.hpp
+iostream
+-
+string
+-
+vector
+-
+opencv2/opencv.hpp
+../include/opencv2/opencv.hpp
+
 /home/ddekime/CVLearning/src/visionMain.cpp
 cvFunctions.hpp
 /home/ddekime/CVLearning/src/cvFunctions.hpp
@@ -41,4 +51,6 @@ cvImageProcessing.hpp
 /home/ddekime/CVLearning/src/cvImageProcessing.hpp
 cvObjectDetection.hpp
 /home/ddekime/CVLearning/src/cvObjectDetection.hpp
+cvObjectTracking.hpp
+/home/ddekime/CVLearning/src/cvObjectTracking.hpp
 

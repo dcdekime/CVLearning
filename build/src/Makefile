@@ -221,6 +221,33 @@ cvObjectDetection.cpp.s:
 	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvObjectDetection.cpp.s
 .PHONY : cvObjectDetection.cpp.s
 
+cvObjectTracking.o: cvObjectTracking.cpp.o
+
+.PHONY : cvObjectTracking.o
+
+# target to build an object file
+cvObjectTracking.cpp.o:
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.o
+.PHONY : cvObjectTracking.cpp.o
+
+cvObjectTracking.i: cvObjectTracking.cpp.i
+
+.PHONY : cvObjectTracking.i
+
+# target to preprocess a source file
+cvObjectTracking.cpp.i:
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.i
+.PHONY : cvObjectTracking.cpp.i
+
+cvObjectTracking.s: cvObjectTracking.cpp.s
+
+.PHONY : cvObjectTracking.s
+
+# target to generate assembly for a file
+cvObjectTracking.cpp.s:
+	cd /home/ddekime/CVLearning/build && $(MAKE) -f src/CMakeFiles/CVFunctions.dir/build.make src/CMakeFiles/CVFunctions.dir/cvObjectTracking.cpp.s
+.PHONY : cvObjectTracking.cpp.s
+
 visionMain.o: visionMain.cpp.o
 
 .PHONY : visionMain.o
@@ -267,6 +294,9 @@ help:
 	@echo "... cvObjectDetection.o"
 	@echo "... cvObjectDetection.i"
 	@echo "... cvObjectDetection.s"
+	@echo "... cvObjectTracking.o"
+	@echo "... cvObjectTracking.i"
+	@echo "... cvObjectTracking.s"
 	@echo "... visionMain.o"
 	@echo "... visionMain.i"
 	@echo "... visionMain.s"

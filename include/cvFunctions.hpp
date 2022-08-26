@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-#include "opencv2/opencv.hpp"
+#include "visionCommon.hpp"
 
 class cvFunctions
 {

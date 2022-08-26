@@ -4,8 +4,10 @@
 
 void cvObjectDetection::templateMatching()
 {
-    cv::Mat sammyFull = cv::imread("/home/ddekime/CVLearning/resources/sammy.jpg");
-    cv::Mat sammyFace = cv::imread("/home/ddekime/CVLearning/resources/sammy_face.jpg");
+    std::string sammyFullImg = "sammy.jpg";
+    std::string sammyFaceImg = "sammy_face.jpg";
+    cv::Mat sammyFull = cv::imread(RESOURCE_PATH + sammyFullImg);
+    cv::Mat sammyFace = cv::imread(RESOURCE_PATH + sammyFaceImg);
     cv::Mat similarityMap, sammyFullCopy;
     sammyFull.copyTo(sammyFullCopy);
 
@@ -55,12 +57,14 @@ void cvObjectDetection::templateMatching()
 void cvObjectDetection::cornerDetection()
 {
     // Read in chessboard images
-    cv::Mat flatChess = cv::imread("/home/ddekime/CVLearning/resources/flat_chessboard.png", cv::IMREAD_COLOR);
+    std::string flatChessImg = "flat_chessboard.png";
+    cv::Mat flatChess = cv::imread(RESOURCE_PATH + flatChessImg, cv::IMREAD_COLOR);
     cv::Mat flatChessGray;
     cv::cvtColor(flatChess, flatChessGray, cv::COLOR_BGR2GRAY);
     
-    cv::Mat realChess = cv::imread("/home/ddekime/CVLearning/resources/real_chessboard.jpg", cv::IMREAD_COLOR);
-    cv::Mat realChessGray = cv::imread("/home/ddekime/CVLearning/resources/real_chessboard.jpg", CV_32FC1);
+    std::string realChessImg = "real_chessboard.jpg";
+    cv::Mat realChess = cv::imread(RESOURCE_PATH + realChessImg, cv::IMREAD_COLOR);
+    cv::Mat realChessGray = cv::imread(RESOURCE_PATH + realChessImg, CV_32FC1);
     realChessGray.convertTo(realChessGray, CV_32FC1);
 
     // Perform Harris Corner Detection
@@ -121,8 +125,9 @@ void CannyEdgeDetector(int, void*)
 }
 
 void cvObjectDetection::edgeDetection()
-{
-    src = cv::imread("/home/ddekime/CVLearning/resources/sammy_face.jpg", cv::IMREAD_COLOR);
+{   
+    std::string sammyFaceImg = "sammy_face.jpg";
+    src = cv::imread(RESOURCE_PATH + sammyFaceImg, cv::IMREAD_COLOR);
     dst.create(src.size(), src.type());
     cv::cvtColor(src, srcGray, cv::COLOR_BGR2GRAY);
 
@@ -165,7 +170,8 @@ void thresh_callback(int, void*)
 
 void cvObjectDetection::contourDetection()
 {
-    cv::Mat src =  cv::imread("/home/ddekime/CVLearning/resources/internal_external.png", cv::IMREAD_COLOR);
+    std::string intExtImg = "internal_external.png";
+    cv::Mat src =  cv::imread(RESOURCE_PATH + intExtImg, cv::IMREAD_COLOR);
     cv::cvtColor(src, src_gray, cv::COLOR_BGR2GRAY);
     blur(src_gray, src_gray, cv::Size(3,3));
 
@@ -184,8 +190,10 @@ void cvObjectDetection::contourDetection()
 
 void cvObjectDetection::featureDetection(const std::string& fmType)
 {
-    cv::Mat reeses = cv::imread("/home/ddekime/CVLearning/resources/reeses_puffs.png", cv::IMREAD_GRAYSCALE);
-    cv::Mat cereals = cv::imread("/home/ddekime/CVLearning/resources/many_cereals.jpg", cv::IMREAD_GRAYSCALE);
+    std::string reesesImg = "reeses_puffs.png";
+    std::string cerealsImg = "many_cereals.jpg";
+    cv::Mat reeses = cv::imread(RESOURCE_PATH + reesesImg, cv::IMREAD_GRAYSCALE);
+    cv::Mat cereals = cv::imread(RESOURCE_PATH + cerealsImg, cv::IMREAD_GRAYSCALE);
     
     std::vector<cv::KeyPoint> keyPoints1, keyPoints2;
     std::vector<cv::DMatch> matches;
@@ -393,6 +401,82 @@ void cvObjectDetection::watershedCustomSeed()
     markerImg = cv::Mat::zeros(road.size(), CV_32S);
     segments = cv::Mat::zeros(road.size(), CV_8U);
 
+}
+
+void detectFace(const cv::Mat& img)
+{
+    std::string frontalFaceClassifier = "haarcascades/haarcascade_frontalface_default.xml";
+    cv::CascadeClassifier faceCascade = cv::CascadeClassifier(RESOURCE_PATH + frontalFaceClassifier);
+
+    std::vector<cv::Rect> faceRects;
+    faceCascade.detectMultiScale(img, faceRects, 1.2, 5);
+
+    for (size_t i = 0; i < faceRects.size(); i++){ //Loop to draw rectangle around the faces//
+      cv::Mat faceROI = img(faceRects[i]);//Storing the face in a matrix//
+      int x = faceRects[i].x;//Getting the initial row value of face rectangle's starting point//
+      int y = faceRects[i].y;//Getting the initial column value of face rectangle's starting point//
+      int h = y + faceRects[i].height;//Calculating the height of the rectangle//
+      int w = x + faceRects[i].width;//Calculating the width of the rectangle//
+      cv::rectangle(img, cv::Point(x, y), cv::Point(w, h), cv::Scalar(255, 0, 255), 2, 8, 0);//Drawing a rectangle using around the faces//
+    }
+
+    cv::namedWindow("faceDet", cv::WindowFlags::WINDOW_NORMAL);
+    cv::imshow("faceDet", img);
+    cv::waitKey(0);
+    cv::destroyAllWindows();
+
+}
+
+void cvObjectDetection::faceDetection()
+{
+    std::string nadiaImgName = "Nadia_Murad.jpg";
+    std::string denisImgName = "Denis_Mukwege.jpg";
+    std::string solvayImgName = "solvay_conference.jpg";
+
+    cv::Mat nadiaImg = cv::imread(RESOURCE_PATH + nadiaImgName, cv::IMREAD_GRAYSCALE);
+    cv::Mat denisImg = cv::imread(RESOURCE_PATH + denisImgName, cv::IMREAD_GRAYSCALE);
+    cv::Mat solvayImg = cv::imread(RESOURCE_PATH + solvayImgName, cv::IMREAD_GRAYSCALE);
+    
+    //detectFace(nadiaImg);
+    //detectFace(denisImg);
+    detectFace(solvayImg);
+}
+
+void detectAndBlurPlate(const cv::Mat& plateImg)
+{
+    std::string plateClassifier = "haarcascades/haarcascade_russian_plate_number.xml";
+    cv::CascadeClassifier plateCascade = cv::CascadeClassifier(RESOURCE_PATH + plateClassifier);
+
+    std::vector<cv::Rect> plateRects;
+    plateCascade.detectMultiScale(plateImg, plateRects, 1.2, 5);
+
+    for (size_t i = 0; i < plateRects.size(); i++){ //Loop to draw rectangle around the license plates//
+        int x = plateRects[i].x;//Getting the initial row value of plate rectangle's starting point//
+        int y = plateRects[i].y;//Getting the initial column value of plate rectangle's starting point//
+        int h = y + plateRects[i].height;//Calculating the height of the rectangle//
+        int w = x + plateRects[i].width;//Calculating the width of the rectangle//
+        cv::rectangle(plateImg, cv::Point(x, y), cv::Point(w, h), cv::Scalar(0, 0, 255), 2, 8, 0);//Drawing a rectangle using around the license plates//
+
+        cv::Mat plateROI = plateImg(plateRects[i]); //Storing plate in a matrix//
+        cv::Mat blurrRegion;
+        cv::medianBlur(plateROI, blurrRegion, 7);
+        blurrRegion.copyTo(plateImg(plateRects[i]));
+    }
+
+    std::string plateImgWindow = "Car Plate Blurr";
+    cv::namedWindow(plateImgWindow, cv::WindowFlags::WINDOW_NORMAL);
+    cv::imshow(plateImgWindow, plateImg);
+    cv::waitKey(0);
+    cv::destroyAllWindows();
+
+}
+
+void cvObjectDetection::blurPlates()
+{
+    std::string plateName = "car_plate.jpg";
+    cv::Mat plateImg = cv::imread(RESOURCE_PATH + plateName, cv::IMREAD_COLOR);
+
+    detectAndBlurPlate(plateImg);
 }
 
 
